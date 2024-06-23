@@ -1,0 +1,109 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: rgb(103, 161, 255);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: clamp(1.5em, 5vw, 2.5em);
+    margin-top: 5vh;
+    color: #333;
+}
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+div img {
+    width: clamp(60px, 15vw, 100px);
+    height: clamp(60px, 15vw, 100px);
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: #00a2ff;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+div img:hover {
+    transform: scale(1.1);
+}
+
+div#player, div#comp, div#result {
+    font-size: clamp(1em, 4vw, 2em);
+    margin: 10px 0;
+}
+
+#comp {
+    font-size: clamp(0.9em, 3.5vw, 1.7em);
+}
+
+div#result {
+    color: #1eff00;
+    font-weight: bold;
+}
+
+button#reloadButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: clamp(0.8em, 3vw, 1em);
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button#reloadButton:hover {
+    background-color: #fffffd;
+    color: black;
+}
+
+#scores, #highscores {
+    font-size: clamp(1em, 4vw, 2em);
+    margin: 10px 0;
+    color: rgb(0, 0, 0);
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 5px 0px rgba(255, 215, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 5px 0px rgba(255, 215, 0, 0.7);
+    }
+}
+
+.winner {
+    animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #scores, #highscores {
+        text-align: center;
+        width: 100%;
+    }
+}
